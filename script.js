@@ -41,8 +41,16 @@ function roll(){
     else if(rollingsecond === 6){
         document.getElementById("seconddice").setAttribute("src", "./assests/Die_face_6b.svg")
     }
-    
-    if(rollingfirst > rollingsecond){
+
+    if(rollingfirst === rollingsecond){
+        document.getElementById("heading").innerHTML = "Draw..!!";
+        document.getElementById("player1").style.color = "yellow";
+        document.getElementById("player2").style.color = "yellow";
+        document.querySelector("img#seconddice").classList.remove("blend");
+        document.querySelector("img#firstdice").classList.remove("blend");
+    }
+        
+    else if(rollingfirst > rollingsecond){
         document.getElementById("heading").innerHTML = "Player 1 Won..!!";
         document.getElementById("player1").style.color = "green";
         document.getElementById("player2").style.color = "red";
